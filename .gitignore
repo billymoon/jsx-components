@@ -1,0 +1,10 @@
+.DS_Store
+.esm-cache
+.next
+misc
+node_modules
+coverage
+
+*.log
+package-lock.json
+yarn.lock
