@@ -23,41 +23,38 @@ const queryMapper = (props, name) => `
   `) || ''}
 `
 
-export const Col = ({ config = gridDefaults, children, ...props }) => {
-  return (
-    <div className='grid-col' {...props}>
-      {children}
-      <style jsx>{`
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0 ${config.unit}px;
-        float: left;
-        position: relative;
-      `}</style>
-      {/* TODO: why can't I dynamically create media queries? */}
-      <style jsx>{`
-        @media screen and (min-width: ${config.breakpoints.xs}px) {
-          ${queryMapper(props, 'xs')}
-        }
-        @media screen and (min-width: ${config.breakpoints.sm}px) {
-          ${queryMapper(props, 'sm')}
-        }
-        @media screen and (min-width: ${config.breakpoints.md}px) {
-          ${queryMapper(props, 'md')}
-        }
-        @media screen and (min-width: ${config.breakpoints.lg}px) {
-          ${queryMapper(props, 'lg')}
-        }
-        @media screen and (min-width: ${config.breakpoints.xl}px) {
-          ${queryMapper(props, 'xl')}
-        }
-        @media screen and (min-width: ${config.breakpoints.xxl}px) {
-          ${queryMapper(props, 'xxl')}
-        }
-      `}</style>
-    </div>
-  )
-}
+
+export const Col = ({ config = gridDefaults, children, ...props }) =>
+  <div className='grid-col' {...props}>
+    {children}
+    <style jsx>{`
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 ${config.unit}px;
+      float: left;
+      position: relative;
+    `}</style>
+    <style jsx>{`
+      @media screen and (min-width: ${config.breakpoints.xs}px) {
+        ${queryMapper(props, 'xs')}
+      }
+      @media screen and (min-width: ${config.breakpoints.sm}px) {
+        ${queryMapper(props, 'sm')}
+      }
+      @media screen and (min-width: ${config.breakpoints.md}px) {
+        ${queryMapper(props, 'md')}
+      }
+      @media screen and (min-width: ${config.breakpoints.lg}px) {
+        ${queryMapper(props, 'lg')}
+      }
+      @media screen and (min-width: ${config.breakpoints.xl}px) {
+        ${queryMapper(props, 'xl')}
+      }
+      @media screen and (min-width: ${config.breakpoints.xxl}px) {
+        ${queryMapper(props, 'xxl')}
+      }
+    `}</style>
+  </div>
 
 Col.defaultProps = {
   xs: 1

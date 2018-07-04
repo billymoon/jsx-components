@@ -1,7 +1,6 @@
-// TODO: make breakAt768 dynamic breakpoint
-export default ({ href, color = '#a00', title = 'Fork me on GitHub', breakAt768 = false }) =>
+export default ({ href, color = '#a00', title = 'Fork me on GitHub', breakpoint = '768px' }) =>
   <div>
-    <a className={'github-fork-ribbon' + (breakAt768 ? ' break-at-768' : '')} href={href} data-ribbon={title} title={title}>{title}</a>
+    <a className='github-fork-ribbon' href={href} data-ribbon={title} title={title}>{title}</a>
     <style jsx>{`
     .github-fork-ribbon {
       width: 12.1em;
@@ -86,12 +85,12 @@ export default ({ href, color = '#a00', title = 'Fork me on GitHub', breakAt768 
       border-color: #fff;
       border-color: rgba(255, 255, 255, 0.7);
     }
-    @media (max-width: 768px) { /* TODO: potential bug preventing blank line above @media in jsx  */
-      .github-fork-ribbon.break-at-768 {
+    @media (max-width: ${breakpoint}) { /* TODO: potential bug preventing blank line above @media in jsx  */
+      .github-fork-ribbon {
         position: inherit;
       }
 
-      .github-fork-ribbon.break-at-768:before, .github-fork-ribbon.break-at-768:after {
+      .github-fork-ribbon:before, .github-fork-ribbon:after {
         top: 0;
         right: 0;
         width: 100%;
