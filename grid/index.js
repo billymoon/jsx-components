@@ -23,9 +23,8 @@ const queryMapper = (props, name) => `
   `) || ''}
 `
 
-
-export const Col = ({ config = gridDefaults, children, ...props }) =>
-  <div className='grid-col' {...props}>
+export const Col = ({ config = gridDefaults, children, style, ...props }) =>
+  <div className='grid-col' style={style}>
     {children}
     <style jsx>{`
       box-sizing: border-box;
@@ -62,10 +61,10 @@ Col.defaultProps = {
 
 Col.displayName = 'Col'
 
-export const Row = ({ config = gridDefaults, children, ...props }) => {
+export const Row = ({ config = gridDefaults, children, style }) => {
   const lastBreakpoint = getLastBreakpoint(config.breakpoints)
   return (
-    <div className='grid-row' {...props}>
+    <div className='grid-row' style={style}>
       {children}
       <style jsx>{`
         :before, :after {
@@ -109,8 +108,8 @@ export const Row = ({ config = gridDefaults, children, ...props }) => {
 
 Row.displayName = 'Row'
 
-export const Container = ({ config = gridDefaults, children, ...props }) =>
-  <div {...props}>
+export const Container = ({ config = gridDefaults, children, style }) =>
+  <div style={style}>
     {children}
     <style jsx>{`
       :before, :after {

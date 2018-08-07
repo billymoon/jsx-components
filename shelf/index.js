@@ -1,7 +1,7 @@
 import { Container, Row, Col } from '../grid'
 
 // export configurable Shelf component that accepts pre-configured grid components
-export const ShelfConfigurator = ({ Container, Row, Col }) => ({ head, section1, section2, section3, split, indent, rtl, children, ...props }) => {
+export const ShelfConfigurator = ({ Container, Row, Col }) => ({ head, section1, section2, section3, split, indent, rtl, children, style }) => {
   const splitr = section2 ? section3 ? 1 / 3 : 1 / 2 : 1
   const split1 = split && !section3 ? split : splitr
   const split2 = split && !section3 ? 1 - split : splitr
@@ -10,7 +10,7 @@ export const ShelfConfigurator = ({ Container, Row, Col }) => ({ head, section1,
   const pull2 = rtl ? section3 ? 0 : split1 : 0
   const pull3 = rtl ? split1 + split2 : 0
   return (
-    <Container {...props}>
+    <Container style={style}>
       {head &&
       <Row>
         <Col sm={1} offset-sm={indent}>{head}</Col>

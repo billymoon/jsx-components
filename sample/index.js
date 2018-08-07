@@ -8,8 +8,8 @@ const formatCode = code => {
 // TODO: simpify and tidy this section, perhaps this whole sample file
 // TODO: trim leading newlines at xs breakpoint
 // TODO: why can't I use withTheme around this component!!?
-export default ({ input, output, title, breakpoint = '1400px', children, ...props }) =>
-  <div {...props}>
+export default ({ input, output, title, breakpoint = '1400px', children, style }) =>
+  <div style={style}>
     <div className='inner'>
       {input && <pre><code><b>// input</b><br />{formatCode(input)}</code></pre>}
       {output && <pre><code className='secondary'><b>// output</b><br />{formatCode(output)}</code></pre>}
