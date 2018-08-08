@@ -9,7 +9,7 @@ const formatCode = code => {
 // TODO: trim leading newlines at xs breakpoint
 // TODO: why can't I use withTheme around this component!!?
 export default ({ input, output, title, breakpoint = '1400px', children, style }) =>
-  <div style={style}>
+  <div style={style} className='outer'>
     <div className='inner'>
       {input && <pre><code><b>// input</b><br />{formatCode(input)}</code></pre>}
       {output && <pre><code className='secondary'><b>// output</b><br />{formatCode(output)}</code></pre>}
@@ -36,7 +36,7 @@ export default ({ input, output, title, breakpoint = '1400px', children, style }
       }
       @media screen and (min-width: ${breakpoint}) {
         .inner {
-          width: 333.333333%;
+          // width: 333.333333%;
         }
       }
    `}</style>
