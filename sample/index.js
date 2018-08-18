@@ -36,6 +36,7 @@ export default ({ input, output, title, breakpoint = '1400px', children, style }
       }
       @media screen and (min-width: ${breakpoint}) {
         .inner {
+          // TODO: what does this do again..?
           // width: 333.333333%;
         }
       }

@@ -1,7 +1,7 @@
 export { default as ThemeCreator, themeDefaults } from './theme'
 export { default as Sample } from './sample'
 export { default as Ribbon } from './ribbon'
-export { default as StateFactory } from './state-factory'
+export { default as CreateContext, update } from './create-context'
 export { isObject, mergeDeep } from './util'
 export { Container, Row, Col, gridDefaults } from './grid'
 export { default as Shelf, ShelfConfigurator } from './shelf'
