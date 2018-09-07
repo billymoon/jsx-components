@@ -1,3 +1,5 @@
+import React from 'react'
+
 export const gridDefaults = {
   equalized: true,
   unit: 15,
@@ -108,8 +110,8 @@ export const Row = ({ config = gridDefaults, children, style }) => {
 
 Row.displayName = 'Row'
 
-export const Container = ({ config = gridDefaults, children, style }) =>
-  <div style={style}>
+export const Container = ({ config = gridDefaults,  className, children, style }) =>
+  <div style={style} className={className}>
     {children}
     <style jsx>{`
       :before, :after {
